@@ -1,26 +1,30 @@
 {
-  "name": "jarvis",
+  "name": "gators",
   "version": "1.0.0",
-  "description": "An open-source texting api",
+  "description": "Free and easy texting framework for node using SMS gateways.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jdtzmn/jarvis.git"
+    "url": "git+https://github.com/jdtzmn/gators.git"
   },
   "keywords": [
-    "jarvis",
+    "gators",
+    "gator",
+    "node",
+    "sms",
+    "gateways",
     "text",
     "free"
   ],
   "author": "jdtzmn <jdtzmn@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jdtzmn/jarvis/issues"
+    "url": "https://github.com/jdtzmn/gators/issues"
   },
-  "homepage": "https://github.com/jdtzmn/jarvis#readme",
+  "homepage": "https://github.com/jdtzmn/gators#readme",
   "dependencies": {
     "imap": "^0.8.19",
     "mailparser": "^2.1.0",

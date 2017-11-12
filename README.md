@@ -1,4 +1,4 @@
-# Gators
+# gators
 
 Free and easy texting framework for node using [SMS gateways](https://en.wikipedia.org/wiki/SMS_gateway#Email_clients).
 
@@ -29,9 +29,9 @@ gator.connect()
 
 > DISCLAIMER: This package has not been tested with all SMS gateway providers nor phone operating systems.
 
-> For a list of supported providers, see [SUPPORT.md](https://github.com/gators/blob/master/SUPPORT.md).
+> For a list of supported providers, see [SUPPORT.md](https://github.com/jdtzmn/gators/blob/master/SUPPORT.md).
 
-> For instructions on how you can contribute, see [CONTRIBUTE.md](https://github.com/gators/blob/master/CONTRIBUTE.md).
+> For instructions on how you can contribute, see [CONTRIBUTE.md](https://github.com/jdtzmn/gators/blob/master/CONTRIBUTE.md).
 
 This is a module from npm.
 
@@ -72,13 +72,13 @@ module.exports = {
 
 ### Manually test with one of the included examples
 
-Automated tests coming soon...
-
 ```bash
 $ cp ./node_modules/gators/examples/ping.js ./examples
 
 $ node ./examples/ping.js
 ```
+
+> Automated tests coming soon...
 
 ## Built With
 
@@ -102,7 +102,7 @@ See also the list of [contributors](https://github.com/jdtzmn/gators/contributor
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/gators/blob/master/LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/jdtzmn/gators/blob/master/LICENSE.md) file for details
 
 ## Acknowledgments
 
