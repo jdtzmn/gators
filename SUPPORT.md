@@ -1,0 +1,14 @@
+# Supported Providers
+
+|   ———    | Text | Images | Videos | Geolocation | Contacts |
+| :------: | :--: | :----: | :----: | :---------: | :------: |
+| Verizon  | N/T  | N/T    | ✘      | ✘           | ✘        |
+| AT&T     | N/T  | N/T    | ✘      | ✘           | ✘        |
+| T-Mobile | ✔    | ✔      | ✘      | Coming soon | ✘        |
+| Sprint   | N/T  | N/T    | ✘      | ✘           | ✘        |
+
+N/T means not yet tested
+
+
+
+> For instructions on how you can contribute, see [CONTRIBUTE.md](https://github.com/gators/blob/master/CONTRIBUTE.md).

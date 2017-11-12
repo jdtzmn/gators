@@ -1,0 +1,33 @@
+{
+  "name": "jarvis",
+  "version": "1.0.0",
+  "description": "An open-source texting api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdtzmn/jarvis.git"
+  },
+  "keywords": [
+    "jarvis",
+    "text",
+    "free"
+  ],
+  "author": "jdtzmn <jdtzmn@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdtzmn/jarvis/issues"
+  },
+  "homepage": "https://github.com/jdtzmn/jarvis#readme",
+  "dependencies": {
+    "imap": "^0.8.19",
+    "mailparser": "^2.1.0",
+    "nodemailer": "^4.2.0"
+  },
+  "devDependencies": {
+    "elizabot": "0.0.2",
+    "superagent": "^3.6.3"
+  }
+}
