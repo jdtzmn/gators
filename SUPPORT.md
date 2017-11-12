@@ -11,4 +11,4 @@ N/T means not yet tested
 
 
 
-> For instructions on how you can contribute, see [CONTRIBUTE.md](https://github.com/gators/blob/master/CONTRIBUTE.md).
+> For instructions on how you can contribute, see [CONTRIBUTE.md](https://github.com/jdtzmn/gators/blob/master/CONTRIBUTE.md).
