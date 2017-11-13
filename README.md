@@ -7,8 +7,6 @@ Free and easy texting framework for node using [SMS gateways][SMS-article].
 [![GitHub issues][issues-image]][issues-url]
 [![License][license-image]][license-url]
 
-[![NPM](https://nodei.co/npm/gators.png)](https://nodei.co/npm/gators/)
-
 ```js
 // see below for auth template
 const auth = require('../auth.js')
@@ -29,6 +27,8 @@ gator.on('error', (err) => console.log(err))
 
 gator.connect()
 ```
+
+[![NPM](https://nodei.co/npm/gators.png)](https://nodei.co/npm/gators/)
 
 ## Getting Started
 
