@@ -2,12 +2,12 @@
 
 Free and easy texting framework for node using [SMS gateways][SMS-article].
 
-[![NPM](https://nodei.co/npm/gators.png)](https://nodei.co/npm/gators/)
-
 [![GitHub stars][stars-image]][stars-url]
 [![GitHub forks][forks-image]][forks-url]
 [![GitHub issues][issues-image]][issues-url]
 [![License][license-image]][license-url]
+
+[![NPM](https://nodei.co/npm/gators.png)](https://nodei.co/npm/gators/)
 
 ```js
 // see below for auth template
