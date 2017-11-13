@@ -1,8 +1,13 @@
 # gators
 
-Free and easy texting framework for node using [SMS gateways](https://en.wikipedia.org/wiki/SMS_gateway#Email_clients).
+Free and easy texting framework for node using [SMS gateways][SMS-article].
 
 [![NPM](https://nodei.co/npm/gators.png)](https://nodei.co/npm/gators/)
+
+[![GitHub stars][stars-image]][stars-url]
+[![GitHub forks][forks-image]][forks-url]
+[![GitHub issues][issues-image]][issues-url]
+[![License][license-image]][license-url]
 
 ```js
 // see below for auth template
@@ -29,9 +34,9 @@ gator.connect()
 
 > DISCLAIMER: This package has not been tested with all SMS gateway providers nor phone operating systems.
 
-> For a list of supported providers, see [SUPPORT.md](https://github.com/jdtzmn/gators/blob/master/SUPPORT.md).
+> For a list of supported providers, see [SUPPORT.md](SUPPORT.md).
 
-> For instructions on how you can contribute, see [CONTRIBUTE.md](https://github.com/jdtzmn/gators/blob/master/CONTRIBUTE.md).
+> For instructions on how you can contribute, see [CONTRIBUTE.md](CONTRIBUTE.md).
 
 This is a module from npm.
 
@@ -102,10 +107,20 @@ See also the list of [contributors](https://github.com/jdtzmn/gators/contributor
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/jdtzmn/gators/blob/master/LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
 * This amazing [README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
 * [NodeICO](https://nodei.co) for the npm badge.
 * [gitignore.io](https://gitignore.io) for .gitignore
+
+[SMS-article]: https://en.wikipedia.org/wiki/SMS_gateway#Email_clients
+[stars-image]: https://img.shields.io/github/stars/jdtzmn/gators.svg
+[stars-url]: https://github.com/jdtzmn/gators/stargazers
+[forks-image]: https://img.shields.io/github/forks/jdtzmn/gators.svg
+[forks-url]: https://github.com/jdtzmn/gators/network
+[issues-image]: https://img.shields.io/github/issues/jdtzmn/gators.svg
+[issues-url]: https://github.com/jdtzmn/gators/issues
+[license-image]: https://img.shields.io/github/license/jdtzmn/gators.svg
+[license-url]: https://github.com/jdtzmn/gators/blob/master/LICENSE.md
