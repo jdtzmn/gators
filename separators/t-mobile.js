@@ -1,26 +1,20 @@
 // ==============================
-// ======== TEXT SEPARATER ======
+// ======== TEXT SEPARATOR ======
 // ==============================
 
-const separateText = (prev, attachments, next) => {
-  const texts = attachments.filter((e) => e.contentType === 'text/plain')
-
-  // decode text
-  const data = texts.map((text) => ({
-    value: text.content.toString(),
-    raw: text.content
-  }))
+const separateText = (prev, mail, next) => {
+  const texts = mail.attachments.filter((e) => e.contentType === 'text/plain')
 
   // send back data
-  next('texts', data)
+  next('text', texts[0].toString())
 }
 
 // ==============================
 // ======= IMAGE SEPARATOR ======
 // ==============================
 
-const separateImages = (prev, attachments, next) => {
-  const images = attachments.filter((e) => e.contentType === 'image/jpeg')
+const separateImages = (prev, mail, next) => {
+  const images = mail.attachments.filter((e) => e.contentType === 'image/jpeg')
 
   // decode images
   const data = images.map((image) => ({
@@ -34,13 +28,13 @@ const separateImages = (prev, attachments, next) => {
 }
 
 // ==============================
-// ======= SEPARATER TESTS ======
+// ======= SEPARATOR TESTS ======
 // ==============================
 
-// ------- TEXT SEPARATER -------
-const testTextSeparator = (carrier, attachments) => {
+// ------- TEXT SEPARATOR -------
+const testTextSeparator = (carrier, mail) => {
   // test to see if this separator applies
-  if (attachments.filter((e) => e.contentType === 'text/plain').length > 0) {
+  if (carrier === 'T-Mobile' && mail.attachments.filter((e) => e.contentType === 'text/plain').length > 0) {
     // return separator function if the separator passes the test
     return separateText
   } else {
@@ -49,10 +43,10 @@ const testTextSeparator = (carrier, attachments) => {
   }
 }
 
-// ------ IMAGE SEPARATER ------
-const testImageSeparator = (carrier, attachments) => {
+// ------ IMAGE SEPARATOR ------
+const testImageSeparator = (carrier, mail) => {
   // test to see if this separator applies
-  if (attachments.filter((e) => e.contentType === 'image/jpeg').length > 0) {
+  if (carrier === 'T-Mobile' && mail.attachments.filter((e) => e.contentType === 'image/jpeg').length > 0) {
     // return separator function if the separator passes the test
     return separateImages
   } else {

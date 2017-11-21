@@ -7,7 +7,7 @@ gator.on('connected', () => console.log('connected!'))
 
 gator.on('message', (info, sendReply) => {
   // test to see if there is an image
-  if (info.images.length === 0) {
+  if (!info.images) {
     sendReply({
       title: 'Image Recognition',
       body: 'Try sending an image!'

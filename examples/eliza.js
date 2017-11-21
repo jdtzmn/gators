@@ -7,9 +7,8 @@ const eliza = new ElizaBot()
 gator.on('connected', () => console.log('connected!'))
 
 gator.on('message', (info, sendReply) => {
-  console.log(info)
   // ask ELIZA [http://bit.ly/2ySPGEe] for a reply based on the text
-  const text = info.texts[0].value
+  const text = info.text
   const elizaReply = eliza.transform(text)
 
   // send eliza's reply

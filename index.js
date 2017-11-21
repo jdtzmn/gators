@@ -2,16 +2,16 @@ const util = require('util')
 const EventEmitter = require('events').EventEmitter
 const Email = require('./lib/email.js')
 const carriers = require('./lib/carriers.js')
-const separators = require('./lib/defaultSeparators.js')
+const separators = require('./separators/index.js')
 
 // construct a list of carrier domains
 const getDomain = (email) => email.split('@')[email.split('@').length - 1]
 const carrierDomains = Object.values(carriers).map((email) => getDomain(email))
 
-const Jarvis = function (auth) {
+const Gators = function (auth) {
   // make this a constructor if it is not
-  if (!(this instanceof Jarvis)) {
-    return new Jarvis(auth)
+  if (!(this instanceof Gators)) {
+    return new Gators(auth)
   }
 
   // declare email property
@@ -54,6 +54,12 @@ const Jarvis = function (auth) {
       // define the default info
       const info = { from }
 
+      // define data provided to separators
+      const separatorData = {
+        attachments: mail.attachments,
+        text: mail.text
+      }
+
       // declare counter
       let i = 0
 
@@ -61,9 +67,9 @@ const Jarvis = function (auth) {
       const check = (i) => {
         const test = this._separators[i]
 
-        // if there is a separator
+        // if there is a separator, run it
         if (test) {
-          const separator = test(carrier, mail.attachments, handleSeparator)
+          const separator = test(carrier, separatorData, handleSeparator)
           handleSeparator(separator)
         } else {
           // emit 'message' event with info and reply function
@@ -75,7 +81,7 @@ const Jarvis = function (auth) {
       const handleSeparator = (separator) => {
         // if it passes, run it
         if (separator) {
-          separator(info, mail.attachments, next, this.emit)
+          separator(info, separatorData, next, this.emit)
         } else if (typeof separator !== 'undefined') {
           // otherwise test the next separator
           check(i++)
@@ -122,7 +128,7 @@ const Jarvis = function (auth) {
     if (!options.to || !options.body) {
       let err = new Error('to and body parameters are required')
       return cb ? cb(err, null) : err
-    // make sure that 'jarvis.connect()' has been called
+    // make sure that 'gator.connect()' has been called
     } else if (!this.email) {
       let err = new Error("you must call the 'start' method before sending messages")
       return cb ? cb(err, null) : err
@@ -162,6 +168,6 @@ const Jarvis = function (auth) {
 }
 
 // extend the EventEmitter class to the Email class
-util.inherits(Jarvis, EventEmitter)
+util.inherits(Gators, EventEmitter)
 
-module.exports = Jarvis
+module.exports = Gators

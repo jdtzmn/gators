@@ -3,7 +3,7 @@
 |   ———    | Text | Images | Videos | Geolocation | Contacts |
 | :------: | :--: | :----: | :----: | :---------: | :------: |
 | Verizon  | N/T  | N/T    | ✘      | ✘           | ✘        |
-| AT&T     | N/T  | N/T    | ✘      | ✘           | ✘        |
+| AT&T     | ✔    | ✔      | ✘      | ✘           | ✘        |
 | T-Mobile | ✔    | ✔      | ✘      | Coming soon | ✘        |
 | Sprint   | N/T  | N/T    | ✘      | ✘           | ✘        |
 

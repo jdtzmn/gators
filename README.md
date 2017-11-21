@@ -90,6 +90,7 @@ $ node ./examples/ping.js
 * [node-imap](https://github.com/mscdex/node-imap) - IMAP Client
 * [Nodemailer](https://nodemailer.com/) - SMTP Client
 * [Mailparser](https://nodemailer.com/extras/mailparser/) - Elegantly parse emails
+* [html-to-text](https://github.com/werk85/node-html-to-text) - HTML interpreter
 
 ## Versioning
 
