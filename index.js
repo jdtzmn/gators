@@ -120,9 +120,10 @@ const Gators = function (auth) {
   }
 
   // ==============================
-  // ========== SEND EMAIL ========
+  // ========= SEND EMAILS ========
   // ==============================
 
+  // -------- SEND TO EMAIL -------
   this.send = (options, cb) => {
     // make sure the required parameters are present
     if (!options.to || !options.body) {
@@ -141,6 +142,20 @@ const Gators = function (auth) {
       text: options.body,
       html: '<div dir="ltr"></div>'
     }, cb)
+  }
+
+  // ------- SEND TO CARRIER ------
+  this.sendText = (number, carrier, options, cb) => {
+    // accept string instead of object
+    if (typeof options === 'string') {
+      options = { body: options }
+    }
+
+    // generate email from number and carrier
+    let email = carriers[carrier].replace('[number]', number)
+    options.to = email
+
+    this.send(options, cb)
   }
 
   // ==============================
