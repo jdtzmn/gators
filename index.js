@@ -20,6 +20,9 @@ const Gators = function (auth) {
   // set default separators
   this._separators = separators
 
+  // set carriers
+  this._carriers = Object.keys(carriers)
+
   // ==============================
   // =========== CONNECT ==========
   // ==============================
