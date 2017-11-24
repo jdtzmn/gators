@@ -149,6 +149,11 @@ const Gators = function (auth) {
 
   // ------- SEND TO CARRIER ------
   this.sendText = (number, carrier, options, cb) => {
+    // check to make sure carrier is supported
+    if (this._carriers.indexOf(carrier) === -1) {
+      return cb(new Error('carrier unsupported'), false)
+    }
+
     // accept string instead of object
     if (typeof options === 'string') {
       options = { body: options }
