@@ -143,7 +143,7 @@ const Gators = function (auth) {
       to: options.to,
       subject: options.title || '',
       text: options.body,
-      html: '<div dir="ltr"></div>'
+      html: '<div dir="ltr">' + options.body + '</div>'
     }, cb)
   }
 
