@@ -8,22 +8,26 @@ Free and easy texting framework for node using [SMS gateways][SMS-article].
 [![License][license-image]][license-url]
 
 ```js
-// see below for auth template
-const auth = require('../auth.js')
-const gator = require('gators')(auth)
+import Gators from 'gators'
 
-gator.on('connected', () => console.log('connected!'))
+const emailAuthentication = {
+  account: { /* ... */ },
+  smtp: { /* ... */ },
+  imap: { /* ... */ }
+}
+const gators = new Gators(emailAuthentication)
 
-gator.on('message', (info, sendReply) => {
-  // info object contains message data
-  const text = info.texts[0].value
-  const images = info.texts[0].value
+gators.on('connected', () => console.log('connected!'))
+
+gators.on('message', (details, sendReply) => {
+  const text = details.text.toLowerCase()
+  console.log(`> Received message: ${text}`)
 
   // send reply
   if (text === 'ping') sendReply('pong')
 })
 
-gator.on('error', (err) => console.log(err))
+gator.on('error', (err: any) => console.log(err))
 
 gator.connect()
 ```
@@ -46,6 +50,7 @@ Before installing, download and install [node.js](https://nodejs.org/) and [npm]
 
 ```bash
 $ npm i -s gators
+# or yarn add gators
 ```
 
 ### Create auth file from template
@@ -78,12 +83,8 @@ module.exports = {
 ### Manually test with one of the included examples
 
 ```bash
-$ cp ./node_modules/gators/examples/ping.js ./examples
-
-$ node ./examples/ping.js
+$ ts-node ./examples/ping
 ```
-
-> Automated tests coming soon...
 
 ## Built With
 

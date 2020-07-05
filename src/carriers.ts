@@ -1,4 +1,8 @@
-module.exports = {
+interface Carriers {
+  [key: string]: string
+}
+
+export const carriers: Carriers = {
   '3RiverWireless': '[number]@sms.3rivers.net',
   'ACSWireless': '[number]@paging.acswireless.com',
   'Alltel': '[number]@message.alltel.com',
@@ -127,3 +131,32 @@ module.exports = {
   'Primeco': '[number]@email.uscc.net',
   'SBCAmeritechPaging': '[number]@paging.acswireless.com'
 }
+
+function getDomain (email: string): string {
+  return email.split('@')[email.split('@').length - 1]
+}
+
+export function getCarrier (email: string | undefined): string | null {
+  if (typeof email === 'undefined') return null
+
+  for (let carrierName of Object.keys(carriers)) {
+    const carrierDomain = getDomain(carriers[carrierName])
+    const emailDomain = getDomain(email)
+
+    if (carrierDomain === emailDomain) {
+      return carrierName
+    }
+  }
+
+  return null
+}
+
+export function generateEmail (carrier: string, phoneNumber: string): string {
+  if (Object.keys(carriers).indexOf(carrier) === -1) {
+    throw new Error('Carrier is unsupported')
+  }
+
+  return carriers[carrier].replace('[number]', phoneNumber)
+}
+
+export default carriers

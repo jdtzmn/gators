@@ -132,4 +132,6 @@ $RECYCLE.BIN/
 
 # Custom
 
+dist
 auth.js
+auth.ts
