@@ -1,4 +1,4 @@
-interface Carriers {
+export interface Carriers {
   [key: string]: string
 }
 

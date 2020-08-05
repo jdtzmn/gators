@@ -2,7 +2,7 @@ import { EventEmitter } from 'events'
 import merge from 'lodash/merge'
 import SMTPTransport from 'nodemailer/lib/smtp-transport'
 import { ImapAuth } from './MailListener'
-import { getCarrier, generateEmail } from './carriers'
+import { carriers, Carriers, getCarrier, generateEmail } from './carriers'
 import Email from './Email'
 import { Separator, SeparatorData, MessageDetails, Mail } from './Separator'
 import separators from './separators'
@@ -49,6 +49,8 @@ declare interface Gators {
 class Gators extends EventEmitter {
   private email: Email
   private separators: Separator[]
+
+  static carriers: Carriers = carriers
 
   constructor (auth: Auth, customSeparators: Separator[] = []) {
     super()
