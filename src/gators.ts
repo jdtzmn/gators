@@ -5,7 +5,7 @@ import { ImapAuth } from './MailListener'
 import { getCarrier, generateEmail } from './carriers'
 import Email from './Email'
 import { Separator, SeparatorData, MessageDetails, Mail } from './Separator'
-import separators from '../separators'
+import separators from './separators'
 import { SendMailOptions } from 'nodemailer'
 
 // ==============================

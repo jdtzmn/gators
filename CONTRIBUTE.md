@@ -1,9 +1,5 @@
 # Coming soon... stay tuned
 
-> If you are daring, you can try and make a separator for gators
-
-> Take a look at [separators/t-mobile.js](https://github.com/jdtzmn/gators/blob/master/separators/t-mobile.js) for examples
-
  An example:
 
 ```js
