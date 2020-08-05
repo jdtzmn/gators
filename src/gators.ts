@@ -50,7 +50,7 @@ class Gators extends EventEmitter {
   private email: Email
   private separators: Separator[]
 
-  static carriers: Carriers = carriers
+  static carriers = Object.keys(carriers)
 
   constructor (auth: Auth, customSeparators: Separator[] = []) {
     super()
