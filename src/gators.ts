@@ -6,7 +6,7 @@ import { carriers, Carriers, getCarrier, generateEmail } from './carriers'
 import Email from './Email'
 import { Separator, SeparatorData, MessageDetails, Mail } from './Separator'
 import separators from './separators'
-import { SendMailOptions } from 'nodemailer'
+import { SendMailOptions, Transporter } from 'nodemailer'
 
 // ==============================
 // ============ TYPES ===========
@@ -17,12 +17,21 @@ interface Account {
   pass: string
 }
 
-export interface Auth {
+interface AuthBasics {
   account: Account
-  smtp: Omit<ImapAuth, 'user' | 'pass'>
   imap: Omit<ImapAuth, 'user' | 'pass'>
   defaults?: SMTPTransport.Options
 }
+
+interface AuthWithSmtp extends AuthBasics {
+  smtp: Omit<ImapAuth, 'user' | 'pass'>
+}
+
+interface AuthWithTransporter extends AuthBasics {
+  transport?: Transporter
+}
+
+export type Auth = AuthWithSmtp | AuthWithTransporter
 
 interface SendEmailOptions extends SendMailOptions {
   to: string

@@ -12,8 +12,14 @@ export default class Email extends EventEmitter {
   constructor (private auth: Auth) {
     super()
 
-    const { account, smtp, defaults } = this.auth
-    this.mailer = createTransport({ ...smtp, auth: account }, defaults)
+    const { account, smtp, transport, defaults } = this.auth
+    if (transport) {
+      this.mailer = transport
+    } else if (smtp) {
+      this.mailer = createTransport({ ...smtp, auth: account }, defaults)
+    } else {
+      throw new Error('Either `smtp` or `transport` option must be set in `auth` object.')
+    }
   }
 
   public connect () {
