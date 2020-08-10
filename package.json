@@ -1,6 +1,6 @@
 {
   "name": "gators",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Free and easy texting framework for node using SMS gateways.",
   "scripts": {
     "start": "tsc -w",
