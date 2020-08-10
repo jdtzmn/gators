@@ -23,12 +23,12 @@ interface AuthBasics {
   defaults?: SMTPTransport.Options
 }
 
-interface AuthWithSmtp extends AuthBasics {
+export interface AuthWithSmtp extends AuthBasics {
   smtp: Omit<ImapAuth, 'user' | 'pass'>
 }
 
-interface AuthWithTransporter extends AuthBasics {
-  transport?: Transporter
+export interface AuthWithTransporter extends AuthBasics {
+  transport: Transporter
 }
 
 export type Auth = AuthWithSmtp | AuthWithTransporter

@@ -3,7 +3,7 @@ import { createTransport, Transporter, SendMailOptions } from 'nodemailer'
 import { ParsedMail } from 'mailparser'
 import { promisify } from 'util'
 import MailListener from './MailListener'
-import { Auth } from './gators'
+import { Auth, AuthWithSmtp, AuthWithTransporter } from './gators'
 
 export default class Email extends EventEmitter {
   private mailer: Transporter
@@ -12,7 +12,10 @@ export default class Email extends EventEmitter {
   constructor (private auth: Auth) {
     super()
 
-    const { account, smtp, transport, defaults } = this.auth
+    const { account, defaults } = this.auth
+    const transport = (this.auth as AuthWithTransporter).transport
+    const smtp = (this.auth as AuthWithSmtp).smtp
+
     if (transport) {
       this.mailer = transport
     } else if (smtp) {
