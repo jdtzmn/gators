@@ -162,9 +162,8 @@ class Gators extends EventEmitter {
     }
 
     await this.email.sendMail({
-      to: options.to,
+      ...options,
       subject: options.subject || '',
-      text: options.text,
       html: `<div dir="ltf">${options.text}</div>`
     })
   }
